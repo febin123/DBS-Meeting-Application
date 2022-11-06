@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>DBS-Meeting-System</title>
+</head>
+<body>
+<div align="center">
+	<h1>Meeting List</h1>
+	<table>
+		<thead>
+			<tr>
+			<th>Meeting Topic</th>
+			<th>Meeting Subject</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="meeting : ${listMeetings}">
+			<td th:text="${meeting. meeting_Topic}"></td>
+			<td th:text="${meeting. subject}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+</body>
+</html>
