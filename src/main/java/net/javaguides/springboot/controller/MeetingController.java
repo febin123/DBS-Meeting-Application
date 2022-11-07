@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import net.javaguides.springboot.model.Meeting;
@@ -34,5 +35,14 @@ public class MeetingController {
 		//save meeting to DB
 		meetingService.saveMeeting(meeting);
 		return "redirect:/";
+	}
+		@GetMapping("/showFormForUpdate/{id}")
+	public String showFormForUpdate(@PathVariable(value="id")long id,Model model) {
+		//get meeting from service
+		Meeting meeting=meetingService.getMeetingById(id);
+		
+		//set meeting as a model to populate the form
+		model.addAttribute("employee",meeting);
+		return "update_meeting";
 	}
 }
