@@ -6,4 +6,5 @@ import net.javaguides.springboot.model.Meeting;
 
 public interface MeetingService {
 List<Meeting> getAllMeeting();
+  void saveMeeting(Meeting meeting);
 }
