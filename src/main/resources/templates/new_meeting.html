@@ -8,9 +8,9 @@
 </head>
 <body>
 <div class="container">
-		<h1>Employee Management System</h1>
+		<h1>DBS-Meeting-System</h1>
 		<hr>
-		<h2>Save Employee</h2>
+		<h2>Save</h2>
 </div>
 
 <form action="#" th:action="@{/saveMeeting}" th:object="${meeting}"
@@ -25,6 +25,9 @@
 				<button type="submit" class="btn btn-info col-2"> Save Meeting</button>
 			
 </form>
+	
+	<hr>
+	<a th:href="@{/}">Back</a>
 
 </body>
 </html>
