@@ -17,12 +17,16 @@ public class MeetingServiceImpl implements MeetingService {
 	public List<Meeting> getAllMeeting() {
 		return meetingRepository.findAll();
 	
-	@Override
-	public void saveMeeting(Meeting meeting) {
-		// TODO Auto-generated method stub
-		this.meetingRepository.save(meeting);
-		
-		
+		@Override
+	public Meeting getMeetingId(long id) {
+		Optional<Meeting>optional=meetingRepository.findById(id);
+		Meeting meeting=null;
+		if(optional.isPresent()) {
+			meeting=optional.get();
+		}else {
+			throw new RuntimeException("Meeting id not found ::" + id);
+		}
+		return meeting;
 	}
 
 }
