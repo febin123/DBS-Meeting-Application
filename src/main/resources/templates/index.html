@@ -14,12 +14,14 @@
 			<tr>
 			<th>Meeting Topic</th>
 			<th>Meeting Subject</th>
+			<th>Actions</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="meeting : ${listMeetings}">
 			<td th:text="${meeting. meeting_Topic}"></td>
 			<td th:text="${meeting. subject}"></td>
+			<td> <a th:href="@{/showFormForUpdate/{id}(id=${meeting.id})}" class="btn btn-primary">Update</a></td>
 			</tr>
 		</tbody>
 	</table>
