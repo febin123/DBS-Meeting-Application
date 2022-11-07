@@ -27,6 +27,12 @@ public class MeetingServiceImpl implements MeetingService {
 			throw new RuntimeException("Meeting id not found ::" + id);
 		}
 		return meeting;
+		
 	}
-
+		@Override
+	public void deleteMeetingById(long id) {
+		// TODO Auto-generated method stub
+		this.meetingRepository.deleteById(id);
+		
+	
 }
