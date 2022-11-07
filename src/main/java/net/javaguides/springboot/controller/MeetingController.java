@@ -48,7 +48,6 @@ public class MeetingController {
 	@GetMapping("/deleteMeeting/{id}")
 	public String deleteMeeting(@PathVariable(value="id") long id) {
 		//call delete meeting
-		
-		
-	}
+		this.meetingService.deleteMeetingById(id);
+		return "redirect:/";
 }
