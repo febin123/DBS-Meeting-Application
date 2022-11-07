@@ -13,9 +13,16 @@ public class MeetingServiceImpl implements MeetingService {
 
 	@Autowired
 	private MeetingRepository meetingRepository;
-	@Override
+		@Override
 	public List<Meeting> getAllMeeting() {
 		return meetingRepository.findAll();
+	
+	@Override
+	public void saveMeeting(Meeting meeting) {
+		// TODO Auto-generated method stub
+		this.meetingRepository.save(meeting);
+		
+		
 	}
 
 }
