@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import net.javaguides.springboot.model.Meeting;
 import net.javaguides.springboot.service.MeetingService;
@@ -26,5 +28,11 @@ public class MeetingController {
 		Meeting meeting=new Meeting();
 		model.addAttribute("meeting",meeting);
 		return "new_meeting";
+	}
+		@PostMapping("/saveMeeting")
+	public String saveMeeting(@ModelAttribute("meeting")Meeting meeting) {
+		//save meeting to DB
+		meetingService.saveMeeting(meeting);
+		return "redirect:/";
 	}
 }
