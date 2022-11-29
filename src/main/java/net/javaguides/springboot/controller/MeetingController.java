@@ -50,4 +50,10 @@ public class MeetingController {
 		//call delete meeting
 		this.meetingService.deleteMeetingById(id);
 		return "redirect:/";
+	}
+	//Professor name
+	public String professor(String professor_Name)
+	{
+		return String.format("%s",professor_Name);
+	}
 }
